@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { CheckCircle2, Loader2, ArrowRight } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 const formSchema = z.object({
   full_name: z.string().trim().min(1, "Full name is required").max(100, "Name must be less than 100 characters"),
@@ -36,30 +37,28 @@ const AuditFormSection = () => {
     setSubmitError(null);
 
     try {
-      const response = await fetch(
-        "https://hook.eu2.make.com/a9bhrnqz1iaq96gpmhtkspf3q035g2nx",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            full_name: data.full_name,
-            clinic_name: data.clinic_name,
-            email: data.email,
-            website: data.website || "",
-            message: data.message || "",
-          }),
-        }
-      );
+      const { data: responseData, error } = await supabase.functions.invoke('submit-audit-form', {
+        body: {
+          full_name: data.full_name,
+          clinic_name: data.clinic_name,
+          email: data.email,
+          website: data.website || "",
+          message: data.message || "",
+        },
+      });
 
-      if (!response.ok) {
-        throw new Error("Failed to submit form");
+      if (error) {
+        throw new Error(error.message || "Failed to submit form");
+      }
+
+      if (responseData?.error) {
+        throw new Error(responseData.error);
       }
 
       setIsSubmitted(true);
-    } catch {
-      setSubmitError("Something went wrong. Please try again.");
+    } catch (err) {
+      const errorMessage = err instanceof Error ? err.message : "Something went wrong. Please try again.";
+      setSubmitError(errorMessage);
     } finally {
       setIsSubmitting(false);
     }
