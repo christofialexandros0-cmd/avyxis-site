@@ -1,9 +1,20 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 
-const corsHeaders = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
-};
+// Allowed origins for CORS - restrict to production domain
+const allowedOrigins = [
+  'https://avyxis.net',
+  'http://localhost:5173', // Local development
+  'http://localhost:8080', // Alternative local dev port
+];
+
+function getCorsHeaders(req: Request) {
+  const origin = req.headers.get('origin') || '';
+  const allowedOrigin = allowedOrigins.includes(origin) ? origin : allowedOrigins[0];
+  return {
+    'Access-Control-Allow-Origin': allowedOrigin,
+    'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+  };
+}
 
 // Simple in-memory rate limiting (per IP, 5 requests per minute)
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
@@ -98,6 +109,8 @@ function validateFormData(data: unknown): { valid: boolean; errors: string[]; sa
 }
 
 serve(async (req) => {
+  const corsHeaders = getCorsHeaders(req);
+  
   // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
