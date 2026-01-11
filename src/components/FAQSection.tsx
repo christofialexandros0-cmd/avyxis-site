@@ -8,51 +8,51 @@ import {
 const faqs = [
   {
     question: "What tools do you integrate with?",
-    answer: "We integrate with major CRMs, calendars (Google Calendar, Calendly, Acuity), email platforms, and SMS providers. During the discovery phase, we'll map out your exact tech stack and ensure seamless connections.",
+    answer: "Common integrations include website forms, email, Google Sheets/CRM exports, and scheduling links. We tailor the final stack to what you already use.",
   },
   {
     question: "Do I need to be tech-savvy to use this?",
-    answer: "Not at all. We handle all the technical setup and configuration. You'll receive a simple dashboard to monitor results, and your team will get a quick training session on how everything works.",
+    answer: "No. We install it done-for-you and provide simple documentation. Your team just receives notifications and handles booked consults.",
   },
   {
     question: "What happens after the 30 days?",
-    answer: "Your automation system is yours to keep. It runs independently. We offer optional ongoing support and optimization packages if you'd like continued assistance.",
+    answer: "You keep the system. Optional ongoing monitoring/optimizations are available if you want us to maintain and improve it.",
   },
   {
     question: "How quickly will I see results?",
-    answer: "Most clients see immediate improvements in lead response time from day one of going live. Booking conversion improvements typically become clear within the first 2-3 weeks of operation.",
+    answer: "As soon as the automation is live, inquiries are handled immediately. Booking outcomes depend on your lead flow and offer, but response speed improves right away.",
   },
   {
-    question: "Is there a money-back guarantee?",
-    answer: "Yes. If we don't deliver a working automation system within 30 days as promised, you receive a full refund. We're confident in our process and stand behind our work.",
+    question: "Is there a guarantee?",
+    answer: "We guarantee implementation of the agreed deliverables. If something isn't installed as scoped, we fix it. (If you want a performance guarantee, we can discuss it in writing.)",
   },
 ];
 
 const FAQSection = () => {
   return (
-    <section className="py-20 md:py-28 bg-secondary/30">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+    <section id="faq" className="section-padding bg-secondary/40 scroll-mt-20">
+      <div className="container-narrow">
+        <div className="text-center mb-10 md:mb-12">
+          <h2 className="text-h2-mobile md:text-h2 text-foreground mb-3">
             Frequently Asked Questions
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-muted-foreground">
             Everything you need to know before getting started
           </p>
         </div>
 
         <div className="max-w-2xl mx-auto">
-          <Accordion type="single" collapsible className="space-y-4">
+          <Accordion type="single" collapsible className="space-y-3">
             {faqs.map((faq, index) => (
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="bg-card rounded-xl border border-border/50 px-6 shadow-soft"
+                className="bg-card rounded-xl border border-border/50 px-5 shadow-card"
               >
-                <AccordionTrigger className="text-left font-display font-semibold text-foreground hover:no-underline py-5">
+                <AccordionTrigger className="text-left font-semibold text-foreground hover:no-underline py-4 text-sm">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground pb-5 leading-relaxed">
+                <AccordionContent className="text-muted-foreground pb-4 text-sm leading-relaxed">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

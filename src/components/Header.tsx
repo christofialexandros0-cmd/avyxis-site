@@ -1,21 +1,85 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
 
 const Header = () => {
-  const scrollToForm = () => {
-    document.getElementById("audit-form")?.scrollIntoView({ behavior: "smooth" });
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const scrollToSection = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    setMobileMenuOpen(false);
   };
 
+  const scrollToForm = () => {
+    document.getElementById("audit-form")?.scrollIntoView({ behavior: "smooth" });
+    setMobileMenuOpen(false);
+  };
+
+  const navLinks = [
+    { label: "What We Install", id: "features" },
+    { label: "Timeline", id: "timeline" },
+    { label: "FAQ", id: "faq" },
+  ];
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
-      <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-        <a href="/" className="flex items-center gap-2 font-display text-xl font-bold text-foreground">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border/40">
+      <div className="container-narrow h-[72px] flex items-center justify-between">
+        <a href="/" className="flex items-center gap-2.5 font-semibold text-foreground text-lg tracking-tight">
           <img src="/favicon.png" alt="Avyxis" className="h-8 w-8" />
           Avyxis
         </a>
-        <Button variant="hero" size="sm" onClick={scrollToForm}>
-          Get Free Audit
-        </Button>
+
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center gap-8">
+          {navLinks.map((link) => (
+            <button
+              key={link.id}
+              onClick={() => scrollToSection(link.id)}
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            >
+              {link.label}
+            </button>
+          ))}
+        </nav>
+
+        {/* Desktop CTA */}
+        <div className="hidden md:block">
+          <Button variant="hero" size="sm" onClick={scrollToForm}>
+            Get Free Audit
+          </Button>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <div className="flex md:hidden items-center gap-3">
+          <Button variant="hero" size="sm" onClick={scrollToForm}>
+            Get Audit
+          </Button>
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="p-2 text-foreground"
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
+        </div>
       </div>
+
+      {/* Mobile Menu */}
+      {mobileMenuOpen && (
+        <div className="md:hidden bg-background border-b border-border/40">
+          <nav className="container-narrow py-4 flex flex-col gap-2">
+            {navLinks.map((link) => (
+              <button
+                key={link.id}
+                onClick={() => scrollToSection(link.id)}
+                className="py-3 px-4 text-left text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-lg transition-colors"
+              >
+                {link.label}
+              </button>
+            ))}
+          </nav>
+        </div>
+      )}
     </header>
   );
 };
