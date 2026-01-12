@@ -144,11 +144,9 @@ serve(async (req) => {
                      req.headers.get('cf-connecting-ip') || 
                      'unknown';
     
-    console.log(`Received form submission from IP: ${clientIP}`);
-    
-    // Check rate limit
+    // Check rate limit (IP used internally only, not logged)
     if (isRateLimited(clientIP)) {
-      console.log(`Rate limit exceeded for IP: ${clientIP}`);
+      console.log('Rate limit exceeded for request');
       return new Response(JSON.stringify({ error: 'Too many requests. Please try again later.' }), {
         status: 429,
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
@@ -157,12 +155,11 @@ serve(async (req) => {
 
     // Parse request body
     const body = await req.json();
-    console.log('Received form data (keys only):', Object.keys(body));
 
     // Validate and sanitize
     const validation = validateFormData(body);
     if (!validation.valid) {
-      console.log('Validation failed:', validation.errors);
+      console.log('Form validation failed');
       return new Response(JSON.stringify({ error: validation.errors.join(', ') }), {
         status: 400,
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
@@ -180,7 +177,7 @@ serve(async (req) => {
     }
 
     // Forward to Make.com webhook
-    console.log('Forwarding validated data to Make.com webhook');
+    // Forward to webhook (details not logged for security)
     const webhookResponse = await fetch(webhookUrl, {
       method: 'POST',
       headers: {
