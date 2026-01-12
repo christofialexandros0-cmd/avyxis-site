@@ -15,14 +15,20 @@ const Footer = () => {
               to="/privacy"
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
-              Privacy
+              Privacy Policy
             </Link>
             <Link
               to="/terms"
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
-              Terms
+              Terms of Service
             </Link>
+            <a
+              href="mailto:hello@avyxis.com"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              hello@avyxis.com
+            </a>
           </div>
         </div>
         
