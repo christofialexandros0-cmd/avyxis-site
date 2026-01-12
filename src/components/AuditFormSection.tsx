@@ -187,9 +187,13 @@ const AuditFormSection = () => {
               </Button>
 
               <p className="text-xs text-center text-muted-foreground">
-                By submitting, you agree to our{" "}
+                By submitting, you agree to be contacted about your request. Read our{" "}
                 <a href="/privacy" className="underline hover:text-foreground transition-colors">
                   Privacy Policy
+                </a>{" "}
+                and{" "}
+                <a href="/terms" className="underline hover:text-foreground transition-colors">
+                  Terms
                 </a>
                 .
               </p>
