@@ -2,7 +2,9 @@ import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 
 // Allowed origins for CORS - restrict to production domain and trusted previews
 const allowedOrigins = [
-  'https://avyxis.net',
+  'https://avyxis.com',
+  'https://www.avyxis.com',
+  'https://avyxis.net', // Legacy domain
   'http://localhost:5173', // Local development
   'http://localhost:8080', // Alternative local dev port
 ];
