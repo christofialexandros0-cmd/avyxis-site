@@ -1,15 +1,23 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 
-// Allowed origins for CORS - restrict to production domain
+// Allowed origins for CORS - restrict to production domain and preview
 const allowedOrigins = [
   'https://avyxis.net',
   'http://localhost:5173', // Local development
   'http://localhost:8080', // Alternative local dev port
 ];
 
+function isAllowedOrigin(origin: string): boolean {
+  // Check exact matches
+  if (allowedOrigins.includes(origin)) return true;
+  // Allow Lovable preview domains
+  if (origin.match(/^https:\/\/.*\.lovable\.app$/)) return true;
+  return false;
+}
+
 function getCorsHeaders(req: Request) {
   const origin = req.headers.get('origin') || '';
-  const allowedOrigin = allowedOrigins.includes(origin) ? origin : allowedOrigins[0];
+  const allowedOrigin = isAllowedOrigin(origin) ? origin : allowedOrigins[0];
   return {
     'Access-Control-Allow-Origin': allowedOrigin,
     'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
