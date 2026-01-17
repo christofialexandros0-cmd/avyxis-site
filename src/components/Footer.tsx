@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import avyxisLogo from "@/assets/avyxis-logo.png";
 
 const Footer = () => {
   return (
@@ -6,7 +7,7 @@ const Footer = () => {
       <div className="container-narrow">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2 font-semibold text-foreground">
-            <img src="/favicon.png" alt="Avyxis" className="h-6 w-6" />
+            <img src={avyxisLogo} alt="Avyxis" className="h-6 w-6" />
             Avyxis
           </div>
           
