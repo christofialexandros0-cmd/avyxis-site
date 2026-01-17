@@ -7,24 +7,36 @@ import {
 
 const faqs = [
   {
-    question: "What tools do you integrate with?",
-    answer: "Common integrations include website forms, email, Google Sheets/CRM exports, and scheduling links. We tailor the final stack to what you already use.",
+    question: "Do I need to change my website?",
+    answer: "No. We integrate with what you already use and keep your current site.",
   },
   {
-    question: "Do I need to be tech-savvy to use this?",
-    answer: "No. We install it done-for-you and provide simple documentation. Your team just receives notifications and handles booked consults.",
+    question: "How fast is the response?",
+    answer: "The goal is under 5 minutes for new inquiries, 24/7.",
   },
   {
-    question: "What happens after the 30 days?",
-    answer: "You keep the system. Optional ongoing monitoring/optimizations are available if you want us to maintain and improve it.",
+    question: "Do you require calls or meetings?",
+    answer: "No. Setup is asynchronous via a short intake form and messages.",
   },
   {
-    question: "How quickly will I see results?",
-    answer: "As soon as the automation is live, inquiries are handled immediately. Booking outcomes depend on your lead flow and offer, but response speed improves right away.",
+    question: "What tools do you work with?",
+    answer: "We use Make.com, email, and a tracking sheet, and we connect your booking link.",
   },
   {
-    question: "Is there a guarantee?",
-    answer: "We guarantee implementation of the agreed deliverables. If something isn't installed as scoped, we fix it. (If you want a performance guarantee, we can discuss it in writing.)",
+    question: "Will this work with my booking system?",
+    answer: "Yes. We link directly to your booking page and can tailor messaging.",
+  },
+  {
+    question: "Is this HIPAA compliant?",
+    answer: "This is designed for marketing inquiries only and avoids collecting PHI. Please don't submit medical details.",
+  },
+  {
+    question: "How long does setup take?",
+    answer: "Typically a few days to go live, depending on your lead sources.",
+  },
+  {
+    question: "What happens after the Sprint?",
+    answer: "You can keep Maintenance for monitoring and incremental improvements.",
   },
 ];
 

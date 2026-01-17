@@ -1,11 +1,13 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
-import FeaturesSection from "@/components/FeaturesSection";
-import OutcomesSection from "@/components/OutcomesSection";
-import TimelineSection from "@/components/TimelineSection";
-import AuditProcessSection from "@/components/AuditProcessSection";
+import ProblemSection from "@/components/ProblemSection";
+import SolutionSection from "@/components/SolutionSection";
+import HowItWorksSection from "@/components/HowItWorksSection";
+import DeliverablesSection from "@/components/DeliverablesSection";
+import PricingSection from "@/components/PricingSection";
 import FAQSection from "@/components/FAQSection";
 import AuditFormSection from "@/components/AuditFormSection";
+import FinalCTASection from "@/components/FinalCTASection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -14,12 +16,14 @@ const Index = () => {
       <Header />
       <main>
         <HeroSection />
-        <FeaturesSection />
-        <OutcomesSection />
-        <TimelineSection />
-        <AuditProcessSection />
+        <ProblemSection />
+        <SolutionSection />
+        <HowItWorksSection />
+        <DeliverablesSection />
+        <PricingSection />
         <FAQSection />
         <AuditFormSection />
+        <FinalCTASection />
       </main>
       <Footer />
     </div>
