@@ -1,14 +1,9 @@
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
-
 const Terms = () => {
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <div className="max-w-[760px] mx-auto px-5 md:px-8 pt-12 md:pt-[72px] pb-16">
-        <Link 
-          to="/" 
-          className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-8"
-        >
+        <Link to="/" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-8">
           <ArrowLeft className="w-4 h-4" />
           Back to home
         </Link>
@@ -154,12 +149,10 @@ const Terms = () => {
               </a>
             </p>
             <p>Business name: Avyxis</p>
-            <p>Business address (optional): [Your business mailing address]</p>
+            
           </section>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Terms;
