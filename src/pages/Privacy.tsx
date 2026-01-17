@@ -4,7 +4,7 @@ import { ArrowLeft } from "lucide-react";
 const Privacy = () => {
   return (
     <div className="min-h-screen bg-background">
-      <div className="container-narrow py-12 md:py-20">
+      <div className="max-w-[760px] mx-auto px-5 md:px-8 pt-12 md:pt-[72px] pb-16">
         <Link 
           to="/" 
           className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-8"
@@ -13,127 +13,176 @@ const Privacy = () => {
           Back to home
         </Link>
         
-        <h1 className="text-h2-mobile md:text-h2 text-foreground mb-4">
-          Privacy Policy — Avyxis
+        <h1 className="text-[30px] md:text-[40px] leading-[1.15] font-semibold text-foreground mb-4">
+          Privacy Policy
         </h1>
         
-        <div className="prose prose-gray max-w-none">
-          <p className="text-muted-foreground mb-8">
-            <strong>Last updated:</strong> January 12, 2026
+        <div className="text-base leading-[1.7] text-muted-foreground">
+          <p className="mb-8">
+            <strong className="text-foreground">Effective date:</strong> January __, 2026
           </p>
           
+          <p className="mb-6">
+            Avyxis ("Avyxis," "we," "us," or "our") operates this website to provide information about our services and to allow you to request a Speed-to-Lead Audit and related business communications. This Privacy Policy explains how we collect, use, and share information when you visit our website or contact us.
+          </p>
+          
+          <p className="mb-8 p-4 bg-muted/50 border border-border rounded-lg">
+            <strong className="text-foreground">Important:</strong> Please do not submit personal medical information or other sensitive health details through this website form. This site is intended for marketing and business inquiries only.
+          </p>
+          
+          <div className="border-t border-border/50 my-7" />
+          
           <section className="mb-8">
-            <h2 className="text-lg font-semibold text-foreground mb-3">1. Who we are (Controller)</h2>
-            <p className="text-muted-foreground leading-relaxed">
-              Avyxis ("we", "us") is the controller for personal data processed via this website.
+            <h2 className="text-[20px] md:text-[22px] font-semibold text-foreground mt-7 mb-2.5">
+              1) Information We Collect
+            </h2>
+            
+            <h3 className="text-[18px] font-medium text-foreground mt-[18px] mb-2">
+              A) Information you provide
+            </h3>
+            <p className="mb-4">
+              When you fill out a form, request an audit, or contact us, we may collect:
             </p>
-            <p className="text-muted-foreground leading-relaxed mt-2">
-              Contact:{" "}
+            <ul className="list-disc list-inside space-y-2 ml-4 mb-4">
+              <li>Name</li>
+              <li>Business/clinic name</li>
+              <li>Email address</li>
+              <li>Phone number (if provided)</li>
+              <li>City/state or business location (if provided)</li>
+              <li>Message content and any information you choose to include</li>
+            </ul>
+            
+            <h3 className="text-[18px] font-medium text-foreground mt-[18px] mb-2">
+              B) Information collected automatically
+            </h3>
+            <p className="mb-4">
+              Like most websites, we (or our hosting providers) may automatically receive certain technical information, such as:
+            </p>
+            <ul className="list-disc list-inside space-y-2 ml-4 mb-4">
+              <li>Device and browser type</li>
+              <li>Approximate location (derived from IP address)</li>
+              <li>Log data related to how you use the website (for example, pages viewed and time spent)</li>
+            </ul>
+            
+            <h3 className="text-[18px] font-medium text-foreground mt-[18px] mb-2">
+              C) Cookies and similar technologies
+            </h3>
+            <p>
+              We may use cookies or similar technologies for basic website functionality and to understand site usage. You can control cookies through your browser settings.
+            </p>
+          </section>
+          
+          <div className="border-t border-border/50 my-7" />
+          
+          <section className="mb-8">
+            <h2 className="text-[20px] md:text-[22px] font-semibold text-foreground mt-7 mb-2.5">
+              2) How We Use Information
+            </h2>
+            <p className="mb-4">We use information we collect to:</p>
+            <ul className="list-disc list-inside space-y-2 ml-4">
+              <li>Respond to inquiries and deliver the requested Speed-to-Lead Audit</li>
+              <li>Communicate about our services and next steps you request</li>
+              <li>Improve the website, troubleshooting, and security</li>
+              <li>Maintain business records and prevent fraud or abuse</li>
+            </ul>
+          </section>
+          
+          <div className="border-t border-border/50 my-7" />
+          
+          <section className="mb-8">
+            <h2 className="text-[20px] md:text-[22px] font-semibold text-foreground mt-7 mb-2.5">
+              3) How We Share Information
+            </h2>
+            <p className="mb-4">We may share information:</p>
+            <ul className="list-disc list-inside space-y-2 ml-4 mb-4">
+              <li>With service providers that help us operate the website and communications (for example, email delivery, automation tooling, and data storage) solely to provide these services to us</li>
+              <li>If required by law, legal process, or to protect rights, safety, and security</li>
+            </ul>
+            <p>We do not sell personal information.</p>
+          </section>
+          
+          <div className="border-t border-border/50 my-7" />
+          
+          <section className="mb-8">
+            <h2 className="text-[20px] md:text-[22px] font-semibold text-foreground mt-7 mb-2.5">
+              4) Data Retention
+            </h2>
+            <p>
+              We keep information for as long as needed to respond to you, provide requested services, maintain business records, and comply with legal obligations. We may delete or anonymize information when it is no longer needed.
+            </p>
+          </section>
+          
+          <div className="border-t border-border/50 my-7" />
+          
+          <section className="mb-8">
+            <h2 className="text-[20px] md:text-[22px] font-semibold text-foreground mt-7 mb-2.5">
+              5) Security
+            </h2>
+            <p>
+              We use reasonable administrative and technical measures designed to protect information. However, no method of transmission or storage is completely secure.
+            </p>
+          </section>
+          
+          <div className="border-t border-border/50 my-7" />
+          
+          <section className="mb-8">
+            <h2 className="text-[20px] md:text-[22px] font-semibold text-foreground mt-7 mb-2.5">
+              6) Your Choices
+            </h2>
+            <ul className="list-disc list-inside space-y-2 ml-4">
+              <li>You can request that we stop contacting you by replying "unsubscribe" to an email or by contacting us at the email address below.</li>
+              <li>You can control cookies through your browser settings.</li>
+            </ul>
+          </section>
+          
+          <div className="border-t border-border/50 my-7" />
+          
+          <section className="mb-8">
+            <h2 className="text-[20px] md:text-[22px] font-semibold text-foreground mt-7 mb-2.5">
+              7) U.S. State Privacy Rights (If Applicable)
+            </h2>
+            <p>
+              Some U.S. states provide privacy rights for residents, including California rights such as the right to know, delete, and opt out of certain sharing practices. If these laws apply to our activities with respect to you, you may request to exercise applicable rights by contacting us.
+            </p>
+          </section>
+          
+          <div className="border-t border-border/50 my-7" />
+          
+          <section className="mb-8">
+            <h2 className="text-[20px] md:text-[22px] font-semibold text-foreground mt-7 mb-2.5">
+              8) Children's Privacy
+            </h2>
+            <p>
+              This website is not intended for children under 13, and we do not knowingly collect information from children under 13.
+            </p>
+          </section>
+          
+          <div className="border-t border-border/50 my-7" />
+          
+          <section className="mb-8">
+            <h2 className="text-[20px] md:text-[22px] font-semibold text-foreground mt-7 mb-2.5">
+              9) Changes to This Policy
+            </h2>
+            <p>
+              We may update this Privacy Policy from time to time. The "Effective date" above reflects the latest version.
+            </p>
+          </section>
+          
+          <div className="border-t border-border/50 my-7" />
+          
+          <section className="mb-8">
+            <h2 className="text-[20px] md:text-[22px] font-semibold text-foreground mt-7 mb-2.5">
+              10) Contact
+            </h2>
+            <p className="mb-4">For privacy questions or requests, contact:</p>
+            <p>
+              Email:{" "}
               <a href="mailto:hello@avyxis.com" className="text-primary hover:underline">
                 hello@avyxis.com
               </a>
             </p>
-            <p className="text-muted-foreground leading-relaxed">
-              Website:{" "}
-              <a href="https://avyxis.com" className="text-primary hover:underline">
-                https://avyxis.com
-              </a>
-            </p>
-          </section>
-          
-          <section className="mb-8">
-            <h2 className="text-lg font-semibold text-foreground mb-3">2. What data we collect</h2>
-            <p className="text-muted-foreground leading-relaxed mb-3">
-              When you submit forms or contact us, we may collect:
-            </p>
-            <ul className="list-disc list-inside text-muted-foreground space-y-1 ml-4">
-              <li>Contact details (e.g., name, email)</li>
-              <li>Business details (e.g., clinic name, website)</li>
-              <li>Message content you provide</li>
-              <li>Basic technical data sent by your browser as part of standard server/security logs (e.g., IP address, user agent)</li>
-            </ul>
-          </section>
-          
-          <section className="mb-8">
-            <h2 className="text-lg font-semibold text-foreground mb-3">3. Why we use your data (purposes)</h2>
-            <p className="text-muted-foreground leading-relaxed mb-3">
-              We use your data to:
-            </p>
-            <ul className="list-disc list-inside text-muted-foreground space-y-1 ml-4">
-              <li>Respond to your inquiry and provide the requested information/audit</li>
-              <li>Communicate about our services and next steps</li>
-              <li>Maintain internal records of inquiries</li>
-              <li>Protect the security and integrity of our systems</li>
-            </ul>
-          </section>
-          
-          <section className="mb-8">
-            <h2 className="text-lg font-semibold text-foreground mb-3">4. Legal bases</h2>
-            <p className="text-muted-foreground leading-relaxed mb-3">
-              We process personal data under one or more of the following legal bases:
-            </p>
-            <ul className="list-disc list-inside text-muted-foreground space-y-1 ml-4">
-              <li>Legitimate interests (responding to inquiries, operating and securing our services)</li>
-              <li>Taking steps at your request prior to entering a contract (when you request information about services)</li>
-            </ul>
-          </section>
-          
-          <section className="mb-8">
-            <h2 className="text-lg font-semibold text-foreground mb-3">5. How long we keep data</h2>
-            <p className="text-muted-foreground leading-relaxed">
-              We retain inquiry data for 12 months from the last interaction, unless a longer period is required by law or needed to establish, exercise, or defend legal claims.
-            </p>
-          </section>
-          
-          <section className="mb-8">
-            <h2 className="text-lg font-semibold text-foreground mb-3">6. Service providers (processors)</h2>
-            <p className="text-muted-foreground leading-relaxed mb-3">
-              We use service providers to operate our website and lead-handling workflow. Depending on your interaction, this may include:
-            </p>
-            <ul className="list-disc list-inside text-muted-foreground space-y-1 ml-4">
-              <li>Website platform/hosting: Lovable</li>
-              <li>Automation/workflows: Make</li>
-              <li>Lead logging: Google Sheets</li>
-              <li>Email notifications and replies: Zoho Mail</li>
-            </ul>
-            <p className="text-muted-foreground leading-relaxed mt-3">
-              We share only what is necessary for the relevant function.
-            </p>
-          </section>
-          
-          <section className="mb-8">
-            <h2 className="text-lg font-semibold text-foreground mb-3">7. International transfers</h2>
-            <p className="text-muted-foreground leading-relaxed">
-              Some service providers may process data outside your country. Where applicable, we rely on appropriate safeguards made available by those providers for international transfers.
-            </p>
-          </section>
-          
-          <section className="mb-8">
-            <h2 className="text-lg font-semibold text-foreground mb-3">8. Your rights</h2>
-            <p className="text-muted-foreground leading-relaxed mb-3">
-              You may have rights such as access, rectification, erasure, restriction, objection, and data portability (where applicable).
-            </p>
-            <p className="text-muted-foreground leading-relaxed">
-              To exercise rights, email{" "}
-              <a href="mailto:hello@avyxis.com" className="text-primary hover:underline">
-                hello@avyxis.com
-              </a>
-              . You may also lodge a complaint with your local data protection supervisory authority.
-            </p>
-          </section>
-          
-          <section className="mb-8">
-            <h2 className="text-lg font-semibold text-foreground mb-3">9. Cookies</h2>
-            <p className="text-muted-foreground leading-relaxed">
-              We use essential technologies needed for the site to function. If we add non-essential analytics/marketing cookies, we will present choices where required.
-            </p>
-          </section>
-          
-          <section className="mb-8">
-            <h2 className="text-lg font-semibold text-foreground mb-3">10. Updates</h2>
-            <p className="text-muted-foreground leading-relaxed">
-              We may update this policy from time to time. The latest version will be posted on this page.
-            </p>
+            <p>Business name: Avyxis</p>
+            <p>Business address (optional): [Your business mailing address]</p>
           </section>
         </div>
       </div>
