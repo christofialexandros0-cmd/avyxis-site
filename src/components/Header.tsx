@@ -16,8 +16,9 @@ const Header = () => {
   };
 
   const navLinks = [
-    { label: "What We Install", id: "features" },
-    { label: "Timeline", id: "timeline" },
+    { label: "The System", id: "features" },
+    { label: "How It Works", id: "how-it-works" },
+    { label: "Pricing", id: "pricing" },
     { label: "FAQ", id: "faq" },
   ];
 

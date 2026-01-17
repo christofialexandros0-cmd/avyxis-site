@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Loader2, ArrowRight } from "lucide-react";
+import { Loader2, ArrowRight, FileText, Lightbulb, Map } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 
 const formSchema = z.object({
@@ -19,6 +19,21 @@ const formSchema = z.object({
 });
 
 type FormData = z.infer<typeof formSchema>;
+
+const benefits = [
+  {
+    icon: FileText,
+    text: "A 1-page audit of your response flow",
+  },
+  {
+    icon: Lightbulb,
+    text: "Quick wins to improve lead handling",
+  },
+  {
+    icon: Map,
+    text: "A recommended automation blueprint",
+  },
+];
 
 const AuditFormSection = () => {
   const navigate = useNavigate();
@@ -71,11 +86,21 @@ const AuditFormSection = () => {
         <div className="max-w-xl mx-auto">
           <div className="text-center mb-8">
             <h2 className="text-h2-mobile md:text-h2 text-foreground mb-3">
-              Get Your Free Automation Audit
+              Request Your Free Speed-to-Lead Audit
             </h2>
-            <p className="text-muted-foreground">
-              Tell us about your med spa, and we'll identify your biggest automation opportunities.
+            <p className="text-muted-foreground mb-6">
+              Tell us about your med spa, and we'll identify your biggest opportunities.
             </p>
+
+            {/* Benefits */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-8">
+              {benefits.map((benefit, index) => (
+                <div key={index} className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <benefit.icon className="w-4 h-4 text-primary flex-shrink-0" />
+                  <span>{benefit.text}</span>
+                </div>
+              ))}
+            </div>
           </div>
 
           <div className="bg-card rounded-2xl p-6 md:p-8 shadow-card border border-border/50">
@@ -162,6 +187,11 @@ const AuditFormSection = () => {
                 )}
               </div>
 
+              {/* Medical info notice */}
+              <p className="text-xs text-muted-foreground text-center">
+                Please do not submit personal medical information.
+              </p>
+
               {submitError && (
                 <p className="text-sm text-destructive text-center">{submitError}</p>
               )}
@@ -180,7 +210,7 @@ const AuditFormSection = () => {
                   </>
                 ) : (
                   <>
-                    Request Your Free Audit
+                    Get a Free Speed-to-Lead Audit
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
                   </>
                 )}

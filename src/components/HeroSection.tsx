@@ -1,19 +1,19 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Clock, Wifi, BarChart3 } from "lucide-react";
+import { ArrowRight, MessageCircle, Clock, CalendarCheck } from "lucide-react";
 
 const HeroSection = () => {
   const scrollToForm = () => {
     document.getElementById("audit-form")?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const scrollToFeatures = () => {
-    document.getElementById("features")?.scrollIntoView({ behavior: "smooth" });
+  const scrollToHowItWorks = () => {
+    document.getElementById("how-it-works")?.scrollIntoView({ behavior: "smooth" });
   };
 
   const trustItems = [
-    { icon: Clock, text: "< 5-minute lead response setup" },
-    { icon: Wifi, text: "Asynchronous onboarding" },
-    { icon: BarChart3, text: "Dashboard visibility" },
+    { icon: MessageCircle, text: "No meetings required (async setup)" },
+    { icon: Clock, text: "Installed in days" },
+    { icon: CalendarCheck, text: "Works with your booking link" },
   ];
 
   return (
@@ -27,19 +27,18 @@ const HeroSection = () => {
         <div className="max-w-3xl mx-auto text-center">
           {/* Pill label */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/8 text-primary text-sm font-medium mb-6 animate-fade-up">
-            AI-Powered Automation for Med Spas
+            Speed-to-Lead Automation for Med Spas
           </div>
 
           {/* Main headline */}
           <h1 className="text-h1-mobile md:text-h1 text-foreground mb-5 animate-fade-up" style={{ animationDelay: "0.05s" }}>
-            Book more consultations in 30 days —{" "}
-            <span className="text-gradient-hero">without missed leads.</span>
+            Respond to new inquiries in under 5 minutes—
+            <span className="text-gradient-hero">automatically.</span>
           </h1>
 
           {/* Subheadline */}
           <p className="text-body-lg text-muted-foreground max-w-2xl mx-auto mb-8 animate-fade-up" style={{ animationDelay: "0.1s" }}>
-            We install an AI lead-response + booking automation system for med spas. 
-            Done-for-you in 30 days. No calls needed.
+            Avyxis installs a speed-to-lead automation system for medical spas so every form inquiry gets an instant reply, your team gets notified, and more leads convert into bookings.
           </p>
 
           {/* CTAs */}
@@ -50,14 +49,14 @@ const HeroSection = () => {
               onClick={scrollToForm}
               className="group w-full sm:w-auto"
             >
-              Get the free automation audit
+              Get a Free Speed-to-Lead Audit
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
             </Button>
             <button
-              onClick={scrollToFeatures}
+              onClick={scrollToHowItWorks}
               className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors underline-offset-4 hover:underline"
             >
-              See what we install
+              See How It Works
             </button>
           </div>
 
@@ -70,6 +69,11 @@ const HeroSection = () => {
               </div>
             ))}
           </div>
+
+          {/* Medical info notice */}
+          <p className="text-xs text-muted-foreground mt-8 animate-fade-up" style={{ animationDelay: "0.25s" }}>
+            Please do not submit personal medical information.
+          </p>
         </div>
       </div>
     </section>
