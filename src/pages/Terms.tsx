@@ -14,7 +14,7 @@ const Terms = () => {
         
         <div className="text-base leading-[1.7] text-muted-foreground">
           <p className="mb-8">
-            <strong className="text-foreground">Effective date:</strong> January __, 2026
+            <strong className="text-foreground">Effective date:</strong> January 17, 2026
           </p>
           
           <p className="mb-8">
