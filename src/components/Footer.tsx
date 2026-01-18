@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Instagram, Facebook, Linkedin } from "lucide-react";
 import avyxisLogo from "@/assets/avyxis-logo.png";
 
 const Footer = () => {
@@ -29,6 +30,36 @@ const Footer = () => {
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               hello@avyxis.com
+            </a>
+          </div>
+          
+          <div className="flex items-center gap-4">
+            <a
+              href="https://www.instagram.com/avyxis_official?igsh=NjMwNHNwYmxzNGJy&utm_source=qr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+              aria-label="Instagram"
+            >
+              <Instagram className="h-5 w-5" />
+            </a>
+            <a
+              href="https://www.facebook.com/share/1DHE1tGwUk/?mibextid=wwXIfr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+              aria-label="Facebook"
+            >
+              <Facebook className="h-5 w-5" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/avyxis-avyxis-429a7a3a4?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+              aria-label="LinkedIn"
+            >
+              <Linkedin className="h-5 w-5" />
             </a>
           </div>
         </div>
