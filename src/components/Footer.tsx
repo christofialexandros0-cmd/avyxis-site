@@ -53,7 +53,7 @@ const Footer = () => {
               <Facebook className="h-5 w-5" />
             </a>
             <a
-              href="https://www.linkedin.com/in/avyxis-avyxis-429a7a3a4?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+              href="https://www.linkedin.com/in/avyxis-med-spa-ai-automation-429a7a3a4"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors"
