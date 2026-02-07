@@ -4,9 +4,11 @@
     <meta charset="utf-8" />
     <title>Redirecting...</title>
     <script>
-      var path = window.location.pathname;
+      // Redirects GitHub Pages 404s to the SPA entry point
+      var l = window.location;
       var repo = "/avyxis-site";
-      window.location.replace(repo + "/#" + path.replace(repo, ""));
+      var path = l.pathname.replace(repo, "");
+      l.replace(repo + "/?p=" + encodeURIComponent(path + l.search + l.hash));
     </script>
   </head>
   <body></body>
