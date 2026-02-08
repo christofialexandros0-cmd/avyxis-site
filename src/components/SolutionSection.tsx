@@ -41,11 +41,11 @@ const SolutionSection = () => {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 max-w-4xl mx-auto">
           {solutions.map((solution, index) => (
             <div
               key={index}
-              className={`bg-card rounded-2xl p-6 shadow-card border border-border/50 hover:shadow-lg transition-shadow duration-300 ${
+              className={`bg-card rounded-2xl p-5 sm:p-6 shadow-card border border-border/50 hover:shadow-lg transition-shadow duration-300 ${
                 index === 4 ? "sm:col-span-2 lg:col-span-1 lg:col-start-2" : ""
               }`}
             >
