@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useNavigate } from "react-router-dom";
@@ -218,13 +219,13 @@ const AuditFormSection = () => {
 
               <p className="text-xs text-center text-muted-foreground">
                 By submitting, you agree to be contacted about your request. Read our{" "}
-                <a href="/privacy" className="underline hover:text-foreground transition-colors">
+                <Link to="/privacy" className="underline hover:text-foreground transition-colors">
                   Privacy Policy
-                </a>{" "}
+                </Link>{" "}
                 and{" "}
-                <a href="/terms" className="underline hover:text-foreground transition-colors">
+                <Link to="/terms" className="underline hover:text-foreground transition-colors">
                   Terms
-                </a>
+                </Link>
                 .
               </p>
             </form>
