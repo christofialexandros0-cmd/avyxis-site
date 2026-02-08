@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import avyxisLogo from "@/assets/avyxis-logo.png";
@@ -26,10 +27,10 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border/40">
       <div className="container-narrow h-[72px] flex items-center justify-between">
-        <a href="/" className="flex items-center gap-2.5 font-semibold text-foreground text-lg tracking-tight">
+        <Link to="/" className="flex items-center gap-2.5 font-semibold text-foreground text-lg tracking-tight">
           <img src={avyxisLogo} alt="Avyxis" className="h-8 w-8" />
           Avyxis
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
