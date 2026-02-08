@@ -148,11 +148,11 @@
 
   /* Section spacing - 8px grid system */
   .section-padding {
-    @apply py-14 md:py-[72px] lg:py-24;
+    @apply py-10 sm:py-14 md:py-[72px] lg:py-24;
   }
 
   .container-narrow {
-    @apply max-w-[1120px] mx-auto px-4 sm:px-6;
+    @apply max-w-[1120px] mx-auto px-5 sm:px-6;
   }
 
   .animate-fade-up {

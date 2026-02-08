@@ -17,7 +17,7 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="relative pt-[120px] pb-16 md:pt-[144px] md:pb-24 overflow-hidden">
+    <section className="relative pt-[100px] pb-12 sm:pt-[120px] sm:pb-16 md:pt-[144px] md:pb-24 overflow-hidden">
       {/* Background decoration - subtle */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-primary/[0.03] rounded-full blur-3xl" />
@@ -31,18 +31,18 @@ const HeroSection = () => {
           </div>
 
           {/* Main headline */}
-          <h1 className="text-h1-mobile md:text-h1 text-foreground mb-5 animate-fade-up" style={{ animationDelay: "0.05s" }}>
+          <h1 className="text-[1.75rem] leading-[1.2] sm:text-h1-mobile md:text-h1 text-foreground mb-4 sm:mb-5 animate-fade-up" style={{ animationDelay: "0.05s" }}>
             Respond to new inquiries in under 5 minutes—
             <span className="text-gradient-hero">automatically.</span>
           </h1>
 
           {/* Subheadline */}
-          <p className="text-body-lg text-muted-foreground max-w-2xl mx-auto mb-8 animate-fade-up" style={{ animationDelay: "0.1s" }}>
+          <p className="text-sm sm:text-body-lg text-muted-foreground max-w-2xl mx-auto mb-6 sm:mb-8 animate-fade-up" style={{ animationDelay: "0.1s" }}>
             Avyxis installs a speed-to-lead automation system for medical spas so every form inquiry gets an instant reply, your team gets notified, and more leads convert into bookings.
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10 animate-fade-up" style={{ animationDelay: "0.15s" }}>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-8 sm:mb-10 animate-fade-up" style={{ animationDelay: "0.15s" }}>
             <Button 
               variant="hero" 
               size="xl" 

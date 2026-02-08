@@ -26,7 +26,7 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border/40">
-      <div className="container-narrow h-[72px] flex items-center justify-between">
+      <div className="container-narrow h-[60px] sm:h-[72px] flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2.5 font-semibold text-foreground text-lg tracking-tight">
           <img src={avyxisLogo} alt="Avyxis" className="h-8 w-8" />
           Avyxis

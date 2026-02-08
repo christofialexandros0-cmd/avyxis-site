@@ -35,7 +35,7 @@ const HowItWorksSection = () => {
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
             {steps.map((step, index) => (
               <div key={index} className="relative">
                 {/* Connector line for desktop */}
@@ -43,7 +43,7 @@ const HowItWorksSection = () => {
                   <div className="hidden md:block absolute top-10 left-full w-full h-px bg-border -translate-x-1/2 z-0" />
                 )}
                 
-                <div className="relative bg-card rounded-2xl p-6 shadow-card border border-border/50 text-center z-10">
+                <div className="relative bg-card rounded-2xl p-5 sm:p-6 shadow-card border border-border/50 text-center z-10">
                   <div className="w-12 h-12 rounded-full bg-gradient-hero flex items-center justify-center mx-auto mb-4">
                     <span className="text-primary-foreground font-bold text-lg">{step.number}</span>
                   </div>

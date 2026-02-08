@@ -94,7 +94,7 @@ const AuditFormSection = () => {
             </p>
 
             {/* Benefits */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-8">
+            <div className="flex flex-col items-start sm:items-center sm:flex-row sm:justify-center gap-3 sm:gap-6 mb-6 sm:mb-8">
               {benefits.map((benefit, index) => (
                 <div key={index} className="flex items-center gap-2 text-sm text-muted-foreground">
                   <benefit.icon className="w-4 h-4 text-primary flex-shrink-0" />
@@ -104,7 +104,7 @@ const AuditFormSection = () => {
             </div>
           </div>
 
-          <div className="bg-card rounded-2xl p-6 md:p-8 shadow-card border border-border/50">
+          <div className="bg-card rounded-2xl p-5 sm:p-6 md:p-8 shadow-card border border-border/50">
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
               <div className="grid sm:grid-cols-2 gap-5">
                 <div className="space-y-2">
