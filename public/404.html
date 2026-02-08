@@ -4,11 +4,17 @@
     <meta charset="utf-8" />
     <title>Redirecting...</title>
     <script>
-      // Redirects GitHub Pages 404s to the SPA entry point
+      // SPA redirect for GitHub Pages
+      // Converts path to query string so index.html can restore the route
+      var pathSegmentsToKeep = 1; // keep '/avyxis-site' segment
       var l = window.location;
-      var repo = "/avyxis-site";
-      var path = l.pathname.replace(repo, "");
-      l.replace(repo + "/?p=" + encodeURIComponent(path + l.search + l.hash));
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
+        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        l.hash
+      );
     </script>
   </head>
   <body></body>
