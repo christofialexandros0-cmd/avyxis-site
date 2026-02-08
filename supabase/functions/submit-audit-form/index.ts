@@ -16,6 +16,7 @@ function isAllowedOrigin(origin: string): boolean {
   // Trusted preview domains
   if (/^https:\/\/.*\.lovable\.app$/.test(origin)) return true;
   if (/^https:\/\/.*\.lovableproject\.com$/.test(origin)) return true;
+  if (/^https:\/\/.*\.github\.io$/.test(origin)) return true;
 
   return false;
 }
